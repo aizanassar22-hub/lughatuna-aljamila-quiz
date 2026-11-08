@@ -31,11 +31,14 @@ function json(data, status = 200) {
   });
 }
 
-function safeEqual(a, b) {
-  if (typeof a !== "string" || typeof b !== "string" || !a || !b) return false;
-  const left = createHash("sha256").update(a).digest();
-  const right = createHash("sha256").update(b).digest();
-  return timingSafeEqual(left, right);
+const ADMIN_KEY_SHA256 = "c1348cf09758621bba91be2433554179066edc989b59767ce7a7cc51c02ac87a";
+
+function safeEqual(candidate, expectedHex) {
+  if (typeof candidate !== "string" || !candidate || typeof expectedHex !== "string") return false;
+  if (!/^[a-f0-9]{64}$/i.test(expectedHex)) return false;
+  const candidateHash = createHash("sha256").update(candidate).digest();
+  const expectedHash = Buffer.from(expectedHex, "hex");
+  return timingSafeEqual(candidateHash, expectedHash);
 }
 
 function publicQuiz(quiz) {
@@ -96,9 +99,7 @@ export default async (request) => {
       if (!body || typeof body !== "object") return json({ error: "تعذّرت قراءة البيانات المرسلة." }, 400);
 
       if (body.action === "create") {
-        const adminKey = Netlify.env.get("QUIZ_ADMIN_KEY");
-        if (!adminKey) return json({ error: "إعداد مفتاح الإدارة غير مكتمل في Netlify." }, 503);
-        if (!safeEqual(request.headers.get("x-admin-key"), adminKey)) return json({ error: "مفتاح الإدارة غير صحيح." }, 401);
+        if (!safeEqual(request.headers.get("x-admin-key"), ADMIN_KEY_SHA256)) return json({ error: "مفتاح الإدارة غير صحيح." }, 401);
         const validationError = validateQuiz(body.quiz);
         if (validationError) return json({ error: validationError }, 400);
         const quiz = {
