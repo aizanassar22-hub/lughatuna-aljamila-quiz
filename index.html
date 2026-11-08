@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f6f4ec">
+<meta name="description" content="لغتنا الجميلة — اختبر معلوماتك في إعراب القرآن الكريم وعلوم النحو.">
+<title>لغتنا الجميلة | الكويزات التفاعلية</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f4ec;--paper:#fffefa;--ink:#27372e;--muted:#778078;--green:#657d69;--green-pale:#eaf0e7;--gold:#b89b60;--line:#e8e4d9;--shadow:0 14px 36px rgba(44,58,47,.07)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:'Tajawal',Tahoma,Arial,sans-serif;line-height:1.8}
+header{background:rgba(255,254,250,.92);border-bottom:1px solid var(--line)}.topbar{max-width:1120px;margin:auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.brand{display:flex;align-items:center;gap:12px}.brandmark{width:46px;height:46px;border-radius:15px;background:var(--green);color:white;display:grid;place-items:center;font-size:26px;font-weight:800}.brandname{font-size:21px;font-weight:800;line-height:1.25}.brandtag{font-size:12px;color:var(--muted);direction:ltr;text-align:right}.header-tag{color:var(--green);background:var(--green-pale);border-radius:30px;padding:6px 13px;font-size:13px;font-weight:600}
+main{max-width:1120px;margin:34px auto 54px;padding:0 24px}.hero{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:24px}.kicker{color:var(--gold);font-size:14px;font-weight:700}.hero h1{font-size:35px;line-height:1.35;margin:2px 0 5px;font-weight:800}.hero p{margin:0;color:var(--muted);font-size:16px}
+button{font:600 15px 'Tajawal',sans-serif;cursor:pointer;border:0;border-radius:12px;padding:10px 17px;transition:.15s}button:focus-visible{outline:3px solid #c9b47e;outline-offset:2px}.primary{background:var(--green);color:white;box-shadow:0 5px 12px #657d6925}.primary:hover{background:#536b57}.secondary{background:white;border:1px solid var(--line);color:var(--ink)}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:18px}.stat,.panel{background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}.stat{padding:15px 19px}.stat span{color:var(--muted);font-size:14px}.stat strong{display:block;color:var(--green);font-size:28px;line-height:1.3}.layout{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}.panel{padding:21px}.panel-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:15px}.panel h2{font-size:21px;margin:0;font-weight:800}.hint{color:var(--muted);font-size:13px}.tag{white-space:nowrap;background:var(--green-pale);color:var(--green);border-radius:24px;padding:4px 10px;font-size:12px}
+.quiz-card{padding:15px;border:1px solid var(--line);border-radius:14px;background:#fff}.quiz-title{font-size:18px;font-weight:700}.quiz-meta{font-size:13px;color:var(--muted);margin:3px 0 11px}.actions{display:flex;gap:8px;flex-wrap:wrap}.actions button{font-size:13px;padding:7px 12px}.notice{margin-top:13px;padding:9px 12px;border-right:3px solid var(--gold);border-radius:8px;background:#faf7ee;color:#70664e;font-size:13px}
+.student-preview{padding:17px;background:#fbfaf5;border:1px solid var(--line);border-radius:15px}.preview-head{display:flex;justify-content:space-between;align-items:center;gap:8px}.preview-brand{font-weight:800}.question{font-weight:700;font-size:17px;line-height:1.9;margin:14px 0 8px}.quran{font-family:'Amiri',serif;font-size:22px;line-height:2;color:#405644}.option{width:100%;display:block;text-align:right;margin:8px 0;background:white;border:1px solid var(--line);color:var(--ink);padding:9px 12px;border-radius:11px;font:500 15px/1.85 'Tajawal',sans-serif}.option:hover{border-color:#9aaa94}.option.selected{background:var(--green-pale);border-color:var(--green)}.result{min-height:28px;color:var(--green);font-size:14px;font-weight:600;margin-top:8px}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:18px}
+.modal{display:none;position:fixed;inset:0;background:#1e2b2477;align-items:center;justify-content:center;padding:18px;z-index:5}.modal.open{display:flex}.dialog{background:var(--paper);border-radius:18px;padding:22px;max-width:470px;width:100%;box-shadow:var(--shadow)}.dialog h2{margin:0}.field{margin:12px 0}.field label{display:block;font-size:14px;margin-bottom:5px}.field input,.field textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:10px;font:500 15px 'Tajawal',sans-serif;background:white}.field textarea{min-height:75px;resize:vertical}.dialog-actions{display:flex;gap:8px;margin-top:15px}.dialog-result{margin-top:10px;color:var(--green);font-size:13px}
+@media(max-width:760px){.hero{align-items:flex-start;flex-direction:column}.layout{grid-template-columns:1fr}.topbar{padding:13px 16px}main{padding:0 16px;margin-top:24px}.panel{padding:16px}.hero h1{font-size:30px}}
+@media(max-width:460px){.stats{grid-template-columns:1fr}.header-tag{display:none}.brandname{font-size:19px}}
+</style></head>
+<body>
+<header><div class="topbar"><div class="brand"><div class="brandmark">ل</div><div><div class="brandname">لغتنا الجميلة</div><div class="brandtag">Lughatuna Aljamila Quiz</div></div></div><span class="header-tag">منصة الاختبارات التفاعلية</span></div></header>
+<main>
+<section class="hero"><div><div class="kicker">مرحبًا بك</div><h1>اختبر لغتك… واكتشف جمالها</h1><p>اختبارات تفاعلية في النحو وإعراب القرآن الكريم.</p></div><button class="primary" id="newQuiz">＋ إنشاء كويز جديد</button></section>
+<section class="stats"><div class="stat"><span>إجمالي الكويزات</span><strong>١</strong></div><div class="stat"><span>كويزات جاهزة للعرض</span><strong>١</strong></div><div class="stat"><span>نوع المحتوى</span><strong style="font-size:20px">النحو والإعراب</strong></div></section>
+<section class="layout">
+<div class="panel"><div class="panel-head"><div><h2>الكويزات</h2><div class="hint">قائمة الكويزات المتاحة</div></div><span class="tag">نموذج أولي</span></div>
+<div class="quiz-card"><div class="quiz-title">إعراب كلمة «ذَوِي»</div><div class="quiz-meta">سورة البقرة · الآية ١٧٧ · اختيار من متعدد</div><div class="actions"><button class="secondary" id="previewBtn">معاينة الكويز</button><button class="secondary" id="copyBtn">نسخ رابط تجريبي</button></div></div>
+<div class="notice">هذه نسخة الواجهة الأولية. إضافة الكويزات وحفظها وإنشاء روابط مستقلة وبطاقة مشاركة واتساب ستُستكمل في المراحل التالية.</div></div>
+<div class="panel"><div class="panel-head"><div><h2>معاينة السؤال</h2><div class="hint">شكل تقريبي كما يظهر للطالب</div></div><span class="tag">عرض الطالب</span></div>
+<div class="student-preview"><div class="preview-head"><span class="preview-brand">لغتنا الجميلة</span><span class="tag">السؤال ١ من ١</span></div><div class="hint">اختبر معلوماتك في إعراب القرآن الكريم</div>
+<div class="question">ما الإعراب الصحيح لكلمة (ذَوِي) في قوله تعالى:<br><span class="quran">﴿وَآتَى الْمَالَ عَلَىٰ حُبِّهِ ذَوِي الْقُرْبَىٰ﴾</span>؟</div>
+<button class="option">بدل من (الْمَالِ) منصوب وعلامة نصبه الياء لأنه ملحق بجمع المذكر السالم.</button>
+<button class="option">نعت مجرور وعلامة جره الياء لأنه ملحق بجمع المذكر السالم.</button>
+<button class="option">مفعول به ثانٍ منصوب وعلامة نصبه الياء لأنه ملحق بجمع المذكر السالم وهو مضاف.</button>
+<button class="option">مفعول به أول منصوب وعلامة نصبه الفتحة المقدرة على الياء.</button>
+<div class="result" id="result">اختر إجابة لمعاينة التفاعل.</div></div></div></section>
+</main><footer>لغتنا الجميلة · نموذج الواجهة الأولى</footer>
+<div class="modal" id="modal"><div class="dialog"><h2>إنشاء كويز جديد</h2><p class="hint">نموذج مبدئي لشكل نافذة إضافة سؤال.</p><div class="field"><label for="title">عنوان الكويز</label><input id="title" placeholder="مثال: إعراب آية من سورة البقرة"></div><div class="field"><label for="question">نص السؤال</label><textarea id="question" placeholder="اكتب السؤال هنا…"></textarea></div><div class="dialog-actions"><button class="primary" id="addDemo">متابعة</button><button class="secondary" id="closeModal">إغلاق</button></div><div class="dialog-result" id="dialogResult"></div></div></div>
+<script>
+const modal=document.getElementById('modal');
+document.getElementById('newQuiz').addEventListener('click',()=>modal.classList.add('open'));
+document.getElementById('closeModal').addEventListener('click',()=>modal.classList.remove('open'));
+document.getElementById('addDemo').addEventListener('click',()=>{document.getElementById('dialogResult').textContent=document.getElementById('title').value.trim()?'هذه نافذة توضيحية فقط؛ لن يُحفظ الكويز في هذه النسخة.':'اكتب عنوان الكويز أولًا.'});
+document.querySelectorAll('.option').forEach((el,i)=>el.addEventListener('click',()=>{document.querySelectorAll('.option').forEach(x=>x.classList.remove('selected'));el.classList.add('selected');document.getElementById('result').textContent=i===2?'أحسنت! هذه هي الإجابة الصحيحة.':'تم اختيار الإجابة. ستظهر آلية التحقق والتفسير في النسخة الكاملة.'}));
+document.getElementById('previewBtn').addEventListener('click',()=>document.querySelector('.student-preview').scrollIntoView({behavior:'smooth',block:'center'}));
+document.getElementById('copyBtn').addEventListener('click',async()=>{const url='https://lughatuna-aljamila-quiz.netlify.app/quiz/demo';try{await navigator.clipboard.writeText(url);alert('نُسخ الرابط التوضيحي. ملاحظة: الموقع لم يُنشر بعد.')}catch(e){alert(url+'\nرابط توضيحي فقط؛ الموقع لم يُنشر بعد.')}});
+</script></body></html>
