@@ -46,6 +46,7 @@ function publicQuiz(quiz) {
     id: quiz.id,
     title: quiz.title,
     description: quiz.description || "",
+    category: quiz.category || "general",
     createdAt: quiz.createdAt,
     questionCount: quiz.questions.length,
     questions: quiz.questions.map((q) => ({
@@ -87,6 +88,7 @@ export default async (request) => {
         id: quiz.id,
         title: quiz.title,
         description: quiz.description || "",
+        category: quiz.category || "general",
         createdAt: quiz.createdAt,
         questionCount: quiz.questions.length
       }));
@@ -106,6 +108,7 @@ export default async (request) => {
           id: randomUUID().replaceAll("-", "").slice(0, 12),
           title: body.quiz.title.trim(),
           description: typeof body.quiz.description === "string" ? body.quiz.description.trim().slice(0, 300) : "",
+          category: ["grammar", "quran", "general"].includes(body.quiz.category) ? body.quiz.category : "general",
           createdAt: new Date().toISOString(),
           questions: body.quiz.questions.map((q) => ({
             prompt: q.prompt.trim(),
